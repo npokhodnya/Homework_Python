@@ -10,8 +10,6 @@ def check_plane(x, y):
         return 3
     elif x > 0 > y:
         return 4
-    else:
-        return None
 
 
 x_cor = int(input("Введите x: "))
