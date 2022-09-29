@@ -6,14 +6,14 @@
 
 def factorial(num):
     result = 1
-    for i in range(1, num+1):
+    for i in range(1, num + 1):
         result *= i
     return result
 
 
 def create_sequence(number):
     result_list = []
-    for i in range(1, number+1):
+    for i in range(1, number + 1):
         result_list.append(factorial(i))
     return result_list
 
