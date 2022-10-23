@@ -23,9 +23,9 @@ print(f"a * b = {res_list[a - 1]} * {res_list[b - 1]} = {multiplication(a, b, re
 
 
 # Стало:
-def multiplication(a, b, n):
+def multiplication_new(a, b, n):
     lst = [i for i in range(-n, n + 1)]
     return lst[a - 1] * lst[b - 1]
 
 
-print(f"a * b = {multiplication(a, b, n)}")
+print(f"a * b = {multiplication_new(a, b, n)}")
