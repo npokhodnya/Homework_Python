@@ -1,8 +1,8 @@
-import Seminar_7.telephone_directory.modules.checker as checker
+import modules.checker as checker
 
-from Seminar_7.telephone_directory.modules.change_database import add_note_csv, view_notes_csv, create_db
-from Seminar_7.telephone_directory.modules.export import move_data_csv, move_data_csv_to_txt
-from Seminar_7.telephone_directory.modules.import_data import move_data_to_csv, move_data_txt_to_csv
+from modules.change_database import add_note_csv, view_notes_csv, create_db
+from modules.export import move_data_csv, move_data_csv_to_txt
+from modules.import_data import move_data_to_csv, move_data_txt_to_csv
 
 
 def import_csv_menu():
@@ -78,8 +78,12 @@ def export_menu():
 
 
 def show_notes(notes: list):
-    for i in range(1, len(notes)):
-        print(f"{i}. {' ; '.join([element for element in notes[i]])}")
+    if len(notes) == 1:
+        print("Пока здесь пусто :(")
+    else:
+        print("Все записи:")
+        for i in range(1, len(notes)):
+            print(f"{i}. {' ; '.join([element for element in notes[i]])}")
 
 
 def show_params(params: dict):
@@ -100,10 +104,10 @@ def add():
     description = input("Введите описание: ")
     res['Description'] = description
     show_params(res)
-    print(res)
     correct = input("Введенные данные верны? (Да/Нет): ")
     if correct.lower() == "да":
         add_note_csv(res)
+        print("Данные успешно записаны")
     else:
         exit_or_not = input("Данные не будут записаны. Повторить ввод? (Да/Нет): ")
         if exit_or_not.lower() == "да":

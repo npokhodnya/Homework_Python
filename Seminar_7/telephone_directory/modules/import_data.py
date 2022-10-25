@@ -1,6 +1,6 @@
 import csv
 
-from Seminar_7.telephone_directory.modules.change_database import add_note_csv
+from modules.change_database import add_note_csv
 
 
 def move_data_to_csv(from_: str, to: str):
